@@ -5,9 +5,15 @@
   <%= csrf_meta_tag %> <!-- Prevents cross-site request forgery -->
 </head>
 <body>
-<!-- inserts the content of each pae into the layout. meaning using this layout ensures that  visiting the page
-    /pages/home converts the contents of the file to HTML and inserts it in place of  the below stmt-->
-<%= yield %>
+<div class="container">
+    <%= render 'layouts/header' %> <!-- partial -->
+    <section class="round">
+        <!-- inserts the content of each pae into the layout. meaning using this layout ensures that  visiting the page
+            /pages/home converts the contents of the file to HTML and inserts it in place of  the below stmt-->
+        <%= yield %>
+    </section>
+    <%= render 'layouts/footer' %>
+</div>
 
 </body>
 </html>

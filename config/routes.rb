@@ -1,9 +1,27 @@
 SampleApp::Application.routes.draw do
+  # PTN without these statements the views won't be displayed.
+  # Because of the below statement, say pages/home maps requests for the URL /pages/home to the home action in the
+  # Pages controller. Moreover, by using get we arrange for the route to respond to a GET request which will give us a
+  # page at the address /pages/home
+
+  #resources :PagesController
   get "pages/home"
 
   get "pages/contact"
 
   get "pages/about"
+
+  get "pages/help"
+
+
+  # PTN match automatically creates named routes for use in controllers and views.
+  # PTN match '/about' results in about_path=>'/about' and about_url=>'http://localhost:3000/about'
+  match '/contact', :to => 'pages#contact' # pages/contact wont do
+  match '/about', :to => 'pages#about'
+  match '/help', :to => 'pages#help'
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
