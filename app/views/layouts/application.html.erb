@@ -2,10 +2,11 @@
 <html>
 <head>
   <title>Ruby on Rails Tutorial Sample App | <%= @title%></title>
-  <%= csrf_meta_tag %>
+  <%= csrf_meta_tag %> <!-- Prevents cross-site request forgery -->
 </head>
 <body>
-
+<!-- inserts the content of each pae into the layout. meaning using this layout ensures that  visiting the page
+    /pages/home converts the contents of the file to HTML and inserts it in place of  the below stmt-->
 <%= yield %>
 
 </body>
