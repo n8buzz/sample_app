@@ -9,6 +9,7 @@ gem 'sqlite3', :group => :development
 
 group :development do
   gem 'rspec-rails'
+  #gem 'annotate-models' # in the model file gives the columns od the db. adds comments containing the data model to the model file
 end
 
 group :test do
